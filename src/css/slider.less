@@ -1,0 +1,123 @@
+.slider {
+  position: relative;
+  background: url(../img/slider-img.png) no-repeat center 390px,
+    url(../img/slider-bg.svg) no-repeat center 0;
+  background-color: #D2E7EB;
+  padding-top: 65px;
+  padding-bottom: 0;
+  margin-bottom: 50px;
+
+  .xxs-block ( {
+      background:url(../img/mobile-slider-icon.svg) no-repeat center,
+      url(../img/slider-img-mobile.png) no-repeat center 355px,
+      url(../img/mobile-slider-bg.png) no-repeat center;
+    }
+
+  );
+
+  &__block {
+    .xxs-block( {
+        padding-top: 65px;
+      }
+
+    );
+  }
+
+  &__title {
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 56px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #132A82;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+
+    .xxs-block( {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 290px;
+      }
+
+    );
+  }
+
+  &__row {
+    max-width: 750px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+    .xxs-block( {
+        justify-content: center;
+      }
+
+    );
+  }
+
+  &__img {
+    width: 148px;
+    height: 180px;
+    text-align: center;
+    padding-bottom: 70px;
+
+    &:nth-child(2) {
+      margin: 0 140px;      
+      .xxs-block( {
+          margin: 0;
+        }
+
+      );
+    }
+
+    &:nth-child(n+4) {
+      padding-bottom: 90px;
+
+      .xxs-block( {
+          padding-bottom: 108px;
+        }
+
+      );
+    }
+  }
+}
+
+.slider__subtitle {
+  font-family: 'Gotham Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.slider__dots {
+  text-align: center;
+  display: none;
+
+  .xxs-block( {
+      display: block;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  );
+
+}
+
+.slider__dots-item {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
