@@ -7,7 +7,7 @@ function getTimeRemaining(deadlinee) {
   let t = Date.parse(deadline) - Date.parse(new Date());
   let seconds = addZero(Math.floor((t / 1000) % 60));
   let minutes = addZero(Math.floor((t / 1000 / 60) % 60));
-  let hours = addZero(Math.floor(t / (1000 * 60 * 60)));  
+  let hours = addZero(Math.floor(t / (1000 * 60 * 60)));
 
   return {
     'total': t,
@@ -75,28 +75,15 @@ form.addEventListener('submit', function (event) {
   }
 })
 
+if (window.innerWidth < 400) {  
 
-// /**Слайдер */
-
-if (window.innerWidth < 400) {
-
-  
-
-  
-  let mediaQuery = window.matchMedia('(max-width: 500px)');
-
-  if (mediaQuery.matches) { }
-  window.onload = function () { }
-  /* Индекс слайда по умолчанию */
   let slideIndex = 1;
   showSlides(slideIndex);
 
-  /* Устанавливает текущий слайд */
   function currentSlide(n) {
     showSlides(slideIndex = n);
   }
 
-  /* Основная функция слайдера */
   function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("slider__img");
@@ -117,39 +104,16 @@ if (window.innerWidth < 400) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
   };
-
-  
-
 }
 
+let oldWidth = window.innerWidth;
 
+window.onresize = function () {
 
-// let images = document.querySelectorAll('.slider__img');
-// let dots = document.querySelectorAll('.slider__dots-item')
-// let i = 0;
-// console.log(images);
-// console.log(dots);
+  let newWidth = window.innerWidth;
 
-
-// dots.onclick = function () {
-//   images[i].classList.remove('show');
-//   i--;
-
-//   if (i < 0) {
-//     i = images.length - 1;
-//   }
-
-//   images[i].classList.add('show');
-// }
-
-// btnNext.onclick = function () {
-//   images[i].classList.remove('show');
-//   i++;
-
-//   if (i >= images.length) {
-//     i = 0;
-//   }
-
-//   images[i].classList.add('show');
-
-
+  if (newWidth != oldWidth) {   
+    location.reload();
+    oldWidth = newWidth;
+  }
+};
